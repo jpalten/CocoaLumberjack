@@ -221,7 +221,11 @@
 #define LOG_INFO    (ddLogLevel & LOG_FLAG_INFO)
 #define LOG_VERBOSE (ddLogLevel & LOG_FLAG_VERBOSE)
 
+#ifdef DEBUG
+#define LOG_ASYNC_ENABLED NO
+#else
 #define LOG_ASYNC_ENABLED YES
+#endif
 
 #define LOG_ASYNC_ERROR   ( NO && LOG_ASYNC_ENABLED)
 #define LOG_ASYNC_WARN    (YES && LOG_ASYNC_ENABLED)
